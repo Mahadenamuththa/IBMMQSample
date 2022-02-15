@@ -2,4 +2,4 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/aqe08eq1p335ww30?svg=true)](https://ci.appveyor.com/project/Mahadenamuththa/ibmmqsample)
 
-[![Build history](https://buildstats.info/appveyor/chart/Mahadenamuththa/ibmmqsample)](https://ci.appveyor.com/project/Mahadenamuththa/ibmmqsample/history)
+[![Build history](https://ci.appveyor.com/project/Mahadenamuththa/ibmmqsample)](https://ci.appveyor.com/project/Mahadenamuththa/ibmmqsample/history)
