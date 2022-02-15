@@ -6,4 +6,6 @@
 
 ### What is IBM MQ?
 
-IBM MQ can transport any type of data as messages, enabling businesses to build flexible, reusable architectures such as service-oriented architecture (SOA) environments. It works with a broad range of computing platforms, applications, web services and communications protocols for security-rich message delivery. IBM MQ provides a communications layer for visibility and control of the flow of messages and data inside and outside your organization.
+IBM MQ is a family of message-oriented middleware products that IBM launched in December 1993. It was originally called MQSeries, and was renamed WebSphere MQ in 2002 to join the suite of WebSphere products. In April 2014, it was renamed IBM MQ. The products that are included in the MQ family are IBM MQ, IBM MQ Advanced, IBM MQ Appliance, IBM MQ for z/OS, and IBM MQ on IBM Cloud. IBM MQ also has containerised deployment options.
+
+MQ allows independent and potentially non-concurrent applications on a distributed system to securely communicate with each other, using messages. MQ is available on a large number of platforms (both IBM and non-IBM), including z/OS (mainframe), IBM i, Transaction Processing Facility, UNIX (AIX, HP-UX, Solaris), HP NonStop, OpenVMS, Linux, and Microsoft Windows.
