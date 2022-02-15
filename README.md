@@ -4,3 +4,6 @@
 
 [![Build history](https://buildstats.info/appveyor/chart/Mahadenamuththa/ibmmqsample)](https://ci.appveyor.com/project/Mahadenamuththa/ibmmqsample/history)
 
+### What is IBM MQ?
+
+IBM MQ can transport any type of data as messages, enabling businesses to build flexible, reusable architectures such as service-oriented architecture (SOA) environments. It works with a broad range of computing platforms, applications, web services and communications protocols for security-rich message delivery. IBM MQ provides a communications layer for visibility and control of the flow of messages and data inside and outside your organization.
