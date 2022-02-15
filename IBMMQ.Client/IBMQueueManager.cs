@@ -1,20 +1,21 @@
 ﻿using IBM.WMQ;
 using System;
+using System.Collections;
 
 namespace IBMMQ.Client
 {
     public class IBMQueueManager
     {
         #region Private properties
-        private MQQueueManager queueManager;
+        private static MQQueueManager queueManager;
 
-        private MQQueue queue;
+        private static MQQueue queue;
 
-        private MQMessage queueMessage;
+        private static MQMessage queueMessage;
 
-        private MQPutMessageOptions queuePutMessageOptions;
+        private static MQPutMessageOptions queuePutMessageOptions;
 
-        private MQGetMessageOptions queueGetMessageOptions;
+        private static MQGetMessageOptions queueGetMessageOptions;
 
 
 
@@ -24,13 +25,13 @@ namespace IBMMQ.Client
 
         private static string ChannelInfo;
 
-        private string channelName;
+        private static string channelName;
 
-        private string transportType;
+        private static string transportType;
 
-        private string connectionName;
+        private static string connectionName;
 
-        private string message;
+        private static string message;
         #endregion
 
         #region Constructor
@@ -72,12 +73,19 @@ namespace IBMMQ.Client
 
             connectionName = ChannelParams[2];
 
+            Hashtable props = new Hashtable();
+
+            props.Add(MQC.HOST_NAME_PROPERTY, "127.0.0.1");
+            props.Add(MQC.PORT_PROPERTY, 1421);
+            props.Add(MQC.CHANNEL_PROPERTY, channelName);
+            props.Add(MQC.USER_ID_PROPERTY, "SLTESTUSER");
+            //props.Add(MQC.PASSWORD_PROPERTY, "12345678");
 
             String strReturn = "";
 
             try
             {
-                queueManager = new MQQueueManager(QueueManagerName, channelName, connectionName);
+                queueManager = new MQQueueManager(QueueManagerName, props);
                 strReturn = "Connected Successfully";
             }
             catch (MQException exp)

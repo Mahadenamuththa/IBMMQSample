@@ -23,7 +23,7 @@ namespace IBMMQ.Client
             catch (Exception ex)
             {
                 MQQueueLogger.AddError(ex);
-                MessageBox.Show(ex.Message); 
+                lblConnectionStatus.Text = ex.Message;
             }
 
         }
