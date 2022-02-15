@@ -11,3 +11,5 @@ IBM MQ is a family of message-oriented middleware products that IBM launched in 
 MQ allows independent and potentially non-concurrent applications on a distributed system to securely communicate with each other, using messages. MQ is available on a large number of platforms (both IBM and non-IBM), including z/OS (mainframe), IBM i, Transaction Processing Facility, UNIX (AIX, HP-UX, Solaris), HP NonStop, OpenVMS, Linux, and Microsoft Windows.
 
 [Download IBM MQ](https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev924_windows.zip)
+Configuring
+[![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=XEukvovwufg&t=277s.jpg)](https://www.youtube.com/watch?v=XEukvovwufg&t=277s)
