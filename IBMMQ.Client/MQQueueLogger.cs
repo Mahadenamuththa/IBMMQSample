@@ -8,7 +8,7 @@ namespace IBMMQ.Client
 {
     public class MQQueueLogger
     {
-        private static readonly ILog logger = log4net.LogManager.GetLogger(typeof(MQQueueLogger));
+        private static readonly ILog logger = LogManager.GetLogger(typeof(MQQueueLogger));
         #region Constructor
         static MQQueueLogger()
         {
