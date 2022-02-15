@@ -15,8 +15,17 @@ namespace IBMMQ.Client
         public Home()
         {
             InitializeComponent();
-            IBMQueueManager iBMQueueManager = new IBMQueueManager();
-            lblConnectionStatus.Text = iBMQueueManager.ConnectMQ("QM_TEST", "QM_TEST.LOCAL.ONE", "QM_TEST.SVRCONN/TCP/DESKTOP-8CH23R4(1421)");
+            try
+            {
+                IBMQueueManager iBMQueueManager = new IBMQueueManager();
+                lblConnectionStatus.Text = iBMQueueManager.ConnectMQ("QM_TEST", "QM_TEST.LOCAL.ONE", "QM_TEST.SVRCONN/TCP/DESKTOP-8CH23R4(1421)");
+            }
+            catch (Exception ex)
+            {
+                MQQueueLogger.AddError(ex);
+                MessageBox.Show(ex.Message); 
+            }
+
         }
     }
 }

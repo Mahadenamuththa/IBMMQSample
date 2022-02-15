@@ -72,24 +72,25 @@ namespace IBMMQ.Client
 
             connectionName = ChannelParams[2];
 
+
             String strReturn = "";
 
             try
             {
-
                 queueManager = new MQQueueManager(QueueManagerName, channelName, connectionName);
                 strReturn = "Connected Successfully";
-
             }
             catch (MQException exp)
             {
-                strReturn = "Exception: " + exp.Message;
                 MQQueueLogger.AddError(exp);
-
+                throw;
             }
-
+            catch (Exception ex)
+            {
+                MQQueueLogger.AddError(ex);
+                throw;
+            }
             return strReturn;
-
         }
 
         public string WriteMsg(string strInputMsg)
