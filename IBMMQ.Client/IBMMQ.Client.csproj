@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\amqmdnet.dll" />
+    <Content Include="Documents\IBM MQ Findings.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\Errors\" />
