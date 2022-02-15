@@ -1,0 +1,46 @@
+https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev924_windows.zip - setup download
+
+https://hub.docker.com/r/ibmcom/mq/ -docker image
+
+https://www.youtube.com/watch?v=XEukvovwufg&t=277s - installing
+
+https://www.youtube.com/watch?v=JtQugdDFkMc - configure and create queue manager
+
+https://www.ibm.com/docs/en/ibm-mq/9.0?topic=programs-example-c-code-fragment-use-net
+
+
+https://www.ibm.com/docs/en/ibm-mq/9.0?topic=applications-developing-net
+
+https://github.com/lincolnj12/IDCODEMASTER sample project
+
+https://csharp.hotexamples.com/examples/-/MQQueueManager/-/php-mqqueuemanager-class-examples.html manager samples
+https://csharp.hotexamples.com/examples/-/MQQueueManager/AccessQueue/php-mqqueuemanager-accessqueue-method-examples.html MQQueueManager.AccessQueue Examples
+
+
+https://www.youtube.com/watch?v=U8XCxUYeY_k&ab_channel=IBMDeveloper - video java programe
+
+
+
+issue
+MQRC_Q_MGR_NOT_AVAILABLE
+https://www.ibm.com/docs/en/ibm-mq/9.2?topic=arc-2059-080b-rc2059-mqrc-q-mgr-not-available
+
+find queue managers in CMD - dspmq 
+https://www.ibm.com/docs/en/ibm-mq/7.5?topic=commands-dspmq-display-queue-managers
+
+with ssl certificate
+https://www.ibm.com/docs/en/ibm-mq/8.0?topic=client-writing-simple-application
+
+
+Dotnet packages
+
+IBMMQDotnetClient
+https://www.nuget.org/packages/IBMMQDotnetClient/9.2.4?_src=template - nuget
+https://www.ibm.com/docs/en/ibm-mq/9.2?topic=net-installing-mq-classes-standard
+
+IBMXMSDotnetClient
+https://www.nuget.org/packages/IBMXMSDotnetClient/9.2.4?_src=template - nuget
+https://www.ibm.com/docs/en/ibm-mq/9.2?topic=environment-using-mq-classes-xms-net-standard
+
+full windows forms program
+https://www.c-sharpcorner.com/article/a-quick-start-with-C-Sharp-and-websphere-mq/
