@@ -12,4 +12,4 @@ MQ allows independent and potentially non-concurrent applications on a distribut
 
 [Download IBM MQ](https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev924_windows.zip)
 Configuring
-[![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=XEukvovwufg&t=277s.jpg)](https://www.youtube.com/watch?v=XEukvovwufg&t=277s)
+[![Everything Is AWESOME](https://img.youtube.com/vi/XEukvovwufg/0.jpg)](https://www.youtube.com/watch?v=XEukvovwufg "Everything Is AWESOME")
