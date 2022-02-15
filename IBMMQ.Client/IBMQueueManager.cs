@@ -48,16 +48,16 @@ namespace IBMMQ.Client
         #endregion
 
         #region Public methods
-        public string ConnectMQ(string strQueueManagerName, string strQueueName, string strChannelInfo)
+        public string ConnectMQ(Hashtable props)
         {
 
             //
 
-            QueueManagerName = strQueueManagerName;
+            //QueueManagerName = strQueueManagerName;
 
-            QueueName = strQueueName;
+            //QueueName = strQueueName;
 
-            ChannelInfo = strChannelInfo;
+            //ChannelInfo = strChannelInfo;
 
             //
 
@@ -73,12 +73,12 @@ namespace IBMMQ.Client
 
             connectionName = ChannelParams[2];
 
-            Hashtable props = new Hashtable();
+            //Hashtable props = new Hashtable();
 
-            props.Add(MQC.HOST_NAME_PROPERTY, "127.0.0.1");
-            props.Add(MQC.PORT_PROPERTY, 1421);
-            props.Add(MQC.CHANNEL_PROPERTY, channelName);
-            props.Add(MQC.USER_ID_PROPERTY, "SLTESTUSER");
+            //props.Add(MQC.HOST_NAME_PROPERTY, "127.0.0.1");
+            //props.Add(MQC.PORT_PROPERTY, 1421);
+            //props.Add(MQC.CHANNEL_PROPERTY, channelName);
+            //props.Add(MQC.USER_ID_PROPERTY, "MUSR_MQADMIN");
             //props.Add(MQC.PASSWORD_PROPERTY, "12345678");
 
             String strReturn = "";

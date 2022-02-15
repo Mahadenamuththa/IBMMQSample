@@ -1,4 +1,6 @@
-﻿using System;
+﻿using IBM.WMQ;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,17 +17,40 @@ namespace IBMMQ.Client
         public Home()
         {
             InitializeComponent();
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             try
             {
                 IBMQueueManager iBMQueueManager = new IBMQueueManager();
-                lblConnectionStatus.Text = iBMQueueManager.ConnectMQ("QM_TEST", "QM_TEST.LOCAL.ONE", "QM_TEST.SVRCONN/TCP/DESKTOP-8CH23R4(1421)");
+                Hashtable props = new Hashtable();
+
+                char[] separator = { '/' };
+
+                string[] ChannelParams;
+
+                ChannelParams = txtCName.Text.Split(separator);
+
+               string channelName = ChannelParams[0];
+
+               //string transportType = ChannelParams[1];
+               //string connectionName = ChannelParams[2];
+
+                props.Add(MQC.HOST_NAME_PROPERTY, txtIpAddress.Text);
+                props.Add(MQC.PORT_PROPERTY, txtPort.Text);
+                props.Add(MQC.CHANNEL_PROPERTY, channelName);
+                props.Add(MQC.USER_ID_PROPERTY, txtUserID.Text);
+                props.Add(MQC.PASSWORD_PROPERTY, txtPassword.Text);
+                lblConnectionStatus.Text = iBMQueueManager.ConnectMQ(props);
             }
             catch (Exception ex)
             {
                 MQQueueLogger.AddError(ex);
                 lblConnectionStatus.Text = ex.Message;
             }
-
         }
     }
 }
