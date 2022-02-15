@@ -21,7 +21,7 @@ namespace IBMMQ.Client
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Connect(object sender, EventArgs e)
         {
             try
             {
@@ -34,10 +34,10 @@ namespace IBMMQ.Client
 
                 ChannelParams = txtCName.Text.Split(separator);
 
-               string channelName = ChannelParams[0];
+                string channelName = ChannelParams[0];
 
-               //string transportType = ChannelParams[1];
-               //string connectionName = ChannelParams[2];
+                //string transportType = ChannelParams[1];
+                //string connectionName = ChannelParams[2];
 
                 props.Add(MQC.HOST_NAME_PROPERTY, txtIpAddress.Text);
                 props.Add(MQC.PORT_PROPERTY, txtPort.Text);
