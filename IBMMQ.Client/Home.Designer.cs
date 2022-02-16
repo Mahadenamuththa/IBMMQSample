@@ -46,6 +46,10 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtConnectionStatus = new System.Windows.Forms.TextBox();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.btnGetMessage = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtPutMessage = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -154,9 +158,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(147, 253);
+            this.button1.Location = new System.Drawing.Point(110, 253);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(112, 23);
             this.button1.TabIndex = 12;
             this.button1.Text = "Connect";
             this.button1.UseVisualStyleBackColor = true;
@@ -168,7 +172,7 @@
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.Size = new System.Drawing.Size(281, 20);
             this.txtUserID.TabIndex = 14;
-            this.txtUserID.Text = "MUSR_MQADMIN";
+            this.txtUserID.Text = "testMq";
             // 
             // lblUserId
             // 
@@ -191,7 +195,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(181, 217);
+            this.label5.Location = new System.Drawing.Point(169, 217);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 15;
@@ -204,11 +208,51 @@
             this.txtConnectionStatus.Size = new System.Drawing.Size(156, 20);
             this.txtConnectionStatus.TabIndex = 17;
             // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(251, 339);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(50, 13);
+            this.lblMessage.TabIndex = 18;
+            this.lblMessage.Text = "Message";
+            // 
+            // btnGetMessage
+            // 
+            this.btnGetMessage.Location = new System.Drawing.Point(110, 334);
+            this.btnGetMessage.Name = "btnGetMessage";
+            this.btnGetMessage.Size = new System.Drawing.Size(112, 23);
+            this.btnGetMessage.TabIndex = 19;
+            this.btnGetMessage.Text = "Get message";
+            this.btnGetMessage.UseVisualStyleBackColor = true;
+            this.btnGetMessage.Click += new System.EventHandler(this.btnGetMessage_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(110, 415);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(112, 23);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "Put message";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtPutMessage
+            // 
+            this.txtPutMessage.Location = new System.Drawing.Point(254, 415);
+            this.txtPutMessage.Name = "txtPutMessage";
+            this.txtPutMessage.Size = new System.Drawing.Size(156, 20);
+            this.txtPutMessage.TabIndex = 22;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 450);
+            this.Controls.Add(this.txtPutMessage);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnGetMessage);
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.txtConnectionStatus);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label5);
@@ -254,6 +298,10 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtConnectionStatus;
+        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Button btnGetMessage;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtPutMessage;
     }
 }
 

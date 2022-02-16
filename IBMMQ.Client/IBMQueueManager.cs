@@ -48,7 +48,7 @@ namespace IBMMQ.Client
         #endregion
 
         #region Public methods
-        public string ConnectMQ(Hashtable props)
+        public static string ConnectMQ(Hashtable props)
         {
 
             //
@@ -101,7 +101,7 @@ namespace IBMMQ.Client
             return strReturn;
         }
 
-        public string WriteMsg(string strInputMsg)
+        public static string WriteMsg(string strInputMsg)
         {
             string strReturn = "";
 
@@ -142,7 +142,7 @@ namespace IBMMQ.Client
 
         }
 
-        public string ReadMsg()
+        public static string ReadMsg()
         {
 
             String strReturn = "";

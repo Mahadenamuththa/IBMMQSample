@@ -48,7 +48,7 @@ namespace IBMMQ.Client
                 props.Add(MQC.CHANNEL_PROPERTY, channelName);
                 props.Add(MQC.USER_ID_PROPERTY, txtUserID.Text);
                 props.Add(MQC.PASSWORD_PROPERTY, txtPassword.Text);
-                lblConnectionStatus.Text = iBMQueueManager.ConnectMQ(props);
+                lblConnectionStatus.Text = IBMQueueManager.ConnectMQ(props);
             }
             catch (Exception ex)
             {
@@ -56,6 +56,16 @@ namespace IBMMQ.Client
                 lblConnectionStatus.Text = ex.Message;
                 txtConnectionStatus.Text = ex.Message;
             }
+        }
+
+        private void btnGetMessage_Click(object sender, EventArgs e)
+        {
+            lblMessage.Text = IBMQueueManager.ReadMsg();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            IBMQueueManager.WriteMsg(txtPutMessage.Text);
         }
     }
 }

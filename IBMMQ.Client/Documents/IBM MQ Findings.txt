@@ -6,6 +6,8 @@ https://www.youtube.com/watch?v=XEukvovwufg&t=277s - installing
 
 https://www.youtube.com/watch?v=JtQugdDFkMc - configure and create queue manager
 
+https://www.youtube.com/watch?v=fZLL1DGkdW8 - user namagement
+
 https://www.ibm.com/docs/en/ibm-mq/9.0?topic=programs-example-c-code-fragment-use-net
 
 
