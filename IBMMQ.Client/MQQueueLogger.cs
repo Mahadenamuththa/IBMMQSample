@@ -1,4 +1,5 @@
-﻿using log4net;
+﻿using IBM.WMQ;
+using log4net;
 using log4net.Config;
 using System;
 using System.Diagnostics;
@@ -19,9 +20,14 @@ namespace IBMMQ.Client
         #region Public Methods
         public static bool AddError(Exception ex)
         {
-
+            string from = string.Empty;
             if (ex != null)
             {
+                if (ex is MQException)
+                {
+                    from = string.Format("FROM: {0}", "MQException");
+                }
+
                 StackTrace exTrace = new StackTrace(ex, true);
                 // Class name
                 string className = string.Format("Class name: {0}", exTrace.GetFrame(exTrace.FrameCount - 1).GetMethod().ReflectedType.Name);
@@ -43,12 +49,14 @@ namespace IBMMQ.Client
                 string innerException = ex.InnerException != null ? Environment.NewLine + string.Format("Inner exception: {0}", ex.InnerException) : string.Empty;
 
 
-                string errorDetails = Environment.NewLine + className
-                                    + Environment.NewLine + methodName
-                                    + Environment.NewLine + lineNumber
-                                    + Environment.NewLine + exception
-                                    + innerException
-                                    + Environment.NewLine;
+                string errorDetails = (!string.IsNullOrEmpty(from) ? Environment.NewLine + from : "")
+                                   + Environment.NewLine + className
+                                   + Environment.NewLine + methodName
+                                   + Environment.NewLine + lineNumber
+                                   + Environment.NewLine + exception
+                                   + innerException
+                                   + Environment.NewLine;
+
                 logger.Error(errorDetails);
             }
             return true;

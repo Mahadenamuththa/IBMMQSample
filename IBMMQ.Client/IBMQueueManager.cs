@@ -109,9 +109,7 @@ namespace IBMMQ.Client
 
             {
 
-                queue = queueManager.AccessQueue(QueueName,
-
-                MQC.MQOO_OUTPUT + MQC.MQOO_FAIL_IF_QUIESCING);
+                queue = queueManager.AccessQueue(QueueName, MQC.MQOO_OUTPUT + MQC.MQOO_FAIL_IF_QUIESCING);
 
                 message = strInputMsg;
 
@@ -131,10 +129,12 @@ namespace IBMMQ.Client
             catch (MQException MQexp)
             {
                 strReturn = "Exception: " + MQexp.Message;
+                MQQueueLogger.AddError(MQexp);
             }
             catch (Exception exp)
             {
                 strReturn = "Exception: " + exp.Message;
+                MQQueueLogger.AddError(exp);
 
             }
 
@@ -150,9 +150,7 @@ namespace IBMMQ.Client
             try
             {
 
-                queue = queueManager.AccessQueue(QueueName,
-
-                MQC.MQOO_INPUT_AS_Q_DEF + MQC.MQOO_FAIL_IF_QUIESCING);
+                queue = queueManager.AccessQueue(QueueName, MQC.MQOO_INPUT_AS_Q_DEF + MQC.MQOO_FAIL_IF_QUIESCING);
 
                 queueMessage = new MQMessage();
 
@@ -169,19 +167,22 @@ namespace IBMMQ.Client
             }
             catch (MQException MQexp)
             {
-
                 strReturn = "Exception : " + MQexp.Message;
-
+                MQQueueLogger.AddError(MQexp);
             }
 
             catch (Exception exp)
             {
-
                 strReturn = "Exception: " + exp.Message;
-
+                MQQueueLogger.AddError(exp);
             }
 
             return strReturn;
+
+        }
+        public static void TriggerMessages()
+        {
+            queue = queueManager.AccessQueue(QueueName, (MQC.MQOO_INQUIRE + MQC.MQOO_SET));
 
         }
         #endregion

@@ -48,7 +48,10 @@ namespace IBMMQ.Client
                 props.Add(MQC.CHANNEL_PROPERTY, channelName);
                 props.Add(MQC.USER_ID_PROPERTY, txtUserID.Text);
                 props.Add(MQC.PASSWORD_PROPERTY, txtPassword.Text);
-                lblConnectionStatus.Text = IBMQueueManager.ConnectMQ(props);
+
+                string response = IBMQueueManager.ConnectMQ(props);
+                lblConnectionStatus.Text = response;
+                txtConnectionStatus.Text = response;
             }
             catch (Exception ex)
             {
