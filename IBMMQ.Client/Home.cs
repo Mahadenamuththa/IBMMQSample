@@ -25,6 +25,10 @@ namespace IBMMQ.Client
         {
             try
             {
+                lblConnectionStatus.ResetText();
+                txtConnectionStatus.ResetText();
+                lblConnectionStatus.Text = "Connecting...";
+                txtConnectionStatus.Text = "Connecting...";
                 IBMQueueManager iBMQueueManager = new IBMQueueManager();
                 Hashtable props = new Hashtable();
 
