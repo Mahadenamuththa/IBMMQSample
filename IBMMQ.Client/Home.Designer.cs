@@ -45,6 +45,7 @@
             this.lblUserId = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtConnectionStatus = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -196,11 +197,19 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Password";
             // 
+            // txtConnectionStatus
+            // 
+            this.txtConnectionStatus.Location = new System.Drawing.Point(379, 284);
+            this.txtConnectionStatus.Name = "txtConnectionStatus";
+            this.txtConnectionStatus.Size = new System.Drawing.Size(156, 20);
+            this.txtConnectionStatus.TabIndex = 17;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 450);
+            this.Controls.Add(this.txtConnectionStatus);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtUserID);
@@ -244,6 +253,7 @@
         private System.Windows.Forms.Label lblUserId;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtConnectionStatus;
     }
 }
 

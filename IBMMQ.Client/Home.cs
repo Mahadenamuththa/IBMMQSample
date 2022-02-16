@@ -50,6 +50,7 @@ namespace IBMMQ.Client
             {
                 MQQueueLogger.AddError(ex);
                 lblConnectionStatus.Text = ex.Message;
+                txtConnectionStatus.Text = ex.Message;
             }
         }
     }
