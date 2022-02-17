@@ -7,6 +7,7 @@ https://www.youtube.com/watch?v=XEukvovwufg&t=277s - installing
 https://www.youtube.com/watch?v=JtQugdDFkMc - configure and create queue manager
 
 https://www.youtube.com/watch?v=fZLL1DGkdW8 - user namagement
+https://www.youtube.com/watch?v=fZLL1DGkdW8&ab_channel=LuuSean - user namagement
 
 https://www.ibm.com/docs/en/ibm-mq/9.0?topic=programs-example-c-code-fragment-use-net
 
@@ -46,3 +47,10 @@ https://www.ibm.com/docs/en/ibm-mq/9.2?topic=environment-using-mq-classes-xms-ne
 
 full windows forms program
 https://www.c-sharpcorner.com/article/a-quick-start-with-C-Sharp-and-websphere-mq/
+
+message trigger 
+documentation
+https://www.ibm.com/docs/en/ibm-mq/9.2?topic=queuing-starting-mq-applications-using-triggers
+https://www.ibm.com/docs/en/ibm-mq/8.0?topic=management-triggering-channels
+sample
+https://2freeclear.wordpress.com/2014/11/15/invoke-c-console-application-on-new-message-arrival-in-ibm-websphere-mq/
