@@ -6,8 +6,10 @@ namespace IBMMQ.Client
 {
     public class IBMQueueManager
     {
-        #region Private properties
-        private static MQQueueManager queueManager;
+        #region Public properties
+        public static MQQueueManager queueManager;
+        #endregion
+        #region Private properties  
 
         private static MQQueue queue;
 
@@ -19,73 +21,32 @@ namespace IBMMQ.Client
 
 
 
-        private static string QueueName;
+        private static string _queueName = string.Empty;
 
-        private static string QueueManagerName;
+        private static string _queueManagerName = string.Empty;
 
-        private static string ChannelInfo;
+        private static string qhannelInfo = string.Empty;
 
-        private static string channelName;
+        private static string qhannelName = string.Empty;
 
-        private static string transportType;
+        private static string transportType = string.Empty;
 
-        private static string connectionName;
+        private static string connectionName = string.Empty;
 
         private static string message;
         #endregion
 
-        #region Constructor
-        public IBMQueueManager()
-        {
-
-            //Initialisation
-            QueueManagerName = "QM_TEST";
-
-            QueueName = "QM_TEST.LOCAL.ONE";
-
-            ChannelInfo = "QM_TEST.SVRCONN/TCP/DESKTOP-8CH23R4(1421)";
-        }
-        #endregion
 
         #region Public methods
-        public static string ConnectMQ(Hashtable props)
+        public static string ConnectMQ(string queueManagerName, string queueName, Hashtable props)
         {
-
-            //
-
-            //QueueManagerName = strQueueManagerName;
-
-            //QueueName = strQueueName;
-
-            //ChannelInfo = strChannelInfo;
-
-            //
-
-            char[] separator = { '/' };
-
-            string[] ChannelParams;
-
-            ChannelParams = ChannelInfo.Split(separator);
-
-            channelName = ChannelParams[0];
-
-            transportType = ChannelParams[1];
-
-            connectionName = ChannelParams[2];
-
-            //Hashtable props = new Hashtable();
-
-            //props.Add(MQC.HOST_NAME_PROPERTY, "127.0.0.1");
-            //props.Add(MQC.PORT_PROPERTY, 1421);
-            //props.Add(MQC.CHANNEL_PROPERTY, channelName);
-            //props.Add(MQC.USER_ID_PROPERTY, "MUSR_MQADMIN");
-            //props.Add(MQC.PASSWORD_PROPERTY, "12345678");
-
-            String strReturn = "";
+            string strReturn = string.Empty;
+            _queueManagerName = queueManagerName;
+            _queueName = queueName;
 
             try
             {
-                queueManager = new MQQueueManager(QueueManagerName, props);
+                queueManager = new MQQueueManager(queueManagerName, props);
                 strReturn = "Connected Successfully";
             }
             catch (MQException exp)
@@ -106,25 +67,25 @@ namespace IBMMQ.Client
             string strReturn = "";
 
             try
-
             {
+                if (queueManager != null)
+                {
+                    queue = queueManager.AccessQueue(_queueName, MQC.MQOO_OUTPUT + MQC.MQOO_FAIL_IF_QUIESCING);
 
-                queue = queueManager.AccessQueue(QueueName, MQC.MQOO_OUTPUT + MQC.MQOO_FAIL_IF_QUIESCING);
+                    message = strInputMsg;
 
-                message = strInputMsg;
+                    queueMessage = new MQMessage();
 
-                queueMessage = new MQMessage();
+                    queueMessage.WriteString(message);
 
-                queueMessage.WriteString(message);
+                    queueMessage.Format = MQC.MQFMT_STRING;
 
-                queueMessage.Format = MQC.MQFMT_STRING;
+                    queuePutMessageOptions = new MQPutMessageOptions();
 
-                queuePutMessageOptions = new MQPutMessageOptions();
+                    queue.Put(queueMessage, queuePutMessageOptions);
 
-                queue.Put(queueMessage, queuePutMessageOptions);
-
-                strReturn = "Message sent to the queue successfully";
-
+                    strReturn = string.Format("Message sent to the {0} queue successfully", _queueName);
+                }
             }
             catch (MQException MQexp)
             {
@@ -145,44 +106,47 @@ namespace IBMMQ.Client
         public static string ReadMsg()
         {
 
-            String strReturn = "";
-
+            string strReturn = "";
             try
             {
+                if (queueManager != null)
+                {
+                    queue = queueManager.AccessQueue(_queueName, MQC.MQOO_INPUT_AS_Q_DEF + MQC.MQOO_FAIL_IF_QUIESCING);
 
-                queue = queueManager.AccessQueue(QueueName, MQC.MQOO_INPUT_AS_Q_DEF + MQC.MQOO_FAIL_IF_QUIESCING);
+                    queueMessage = new MQMessage();
 
-                queueMessage = new MQMessage();
+                    queueMessage.Format = MQC.MQFMT_STRING;
 
-                queueMessage.Format = MQC.MQFMT_STRING;
+                    queueGetMessageOptions = new MQGetMessageOptions();
 
-                queueGetMessageOptions = new MQGetMessageOptions();
-
-                queue.Get(queueMessage, queueGetMessageOptions);
-
-                strReturn =
-
-                queueMessage.ReadString(queueMessage.MessageLength);
+                    queue.Get(queueMessage, queueGetMessageOptions);
+                    if (queueMessage.MessageLength > 0)
+                    {
+                        strReturn = queueMessage.ReadString(queueMessage.MessageLength);
+                    }
+                    else
+                    {
+                        strReturn = string.Empty;
+                    }
+                }
+                else
+                {
+                    strReturn = string.Format("You are not connected to  the IBM MQ Manager please connect");
+                }
 
             }
             catch (MQException MQexp)
             {
-                strReturn = "Exception : " + MQexp.Message;
                 MQQueueLogger.AddError(MQexp);
+                throw;
             }
-
             catch (Exception exp)
             {
-                strReturn = "Exception: " + exp.Message;
                 MQQueueLogger.AddError(exp);
+                throw;
             }
 
             return strReturn;
-
-        }
-        public static void TriggerMessages()
-        {
-            queue = queueManager.AccessQueue(QueueName, (MQC.MQOO_INQUIRE + MQC.MQOO_SET));
 
         }
         #endregion

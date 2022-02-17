@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblConnectionStatus = new System.Windows.Forms.Label();
             this.lblIpAddress = new System.Windows.Forms.Label();
             this.lblPort = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,36 +43,17 @@
             this.lblUserId = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtConnectionStatus = new System.Windows.Forms.TextBox();
-            this.lblMessage = new System.Windows.Forms.Label();
             this.btnGetMessage = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtPutMessage = new System.Windows.Forms.TextBox();
+            this.lblConnectStstus = new System.Windows.Forms.Label();
+            this.txtGetMessage = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(254, 258);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Connection Status";
-            // 
-            // lblConnectionStatus
-            // 
-            this.lblConnectionStatus.AutoSize = true;
-            this.lblConnectionStatus.Location = new System.Drawing.Point(379, 258);
-            this.lblConnectionStatus.Name = "lblConnectionStatus";
-            this.lblConnectionStatus.Size = new System.Drawing.Size(78, 13);
-            this.lblConnectionStatus.TabIndex = 1;
-            this.lblConnectionStatus.Text = "Not connected";
-            this.lblConnectionStatus.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // lblIpAddress
             // 
             this.lblIpAddress.AutoSize = true;
-            this.lblIpAddress.Location = new System.Drawing.Point(137, 66);
+            this.lblIpAddress.Location = new System.Drawing.Point(137, 28);
             this.lblIpAddress.Name = "lblIpAddress";
             this.lblIpAddress.Size = new System.Drawing.Size(85, 13);
             this.lblIpAddress.TabIndex = 2;
@@ -83,7 +62,7 @@
             // lblPort
             // 
             this.lblPort.AutoSize = true;
-            this.lblPort.Location = new System.Drawing.Point(196, 91);
+            this.lblPort.Location = new System.Drawing.Point(196, 53);
             this.lblPort.Name = "lblPort";
             this.lblPort.Size = new System.Drawing.Size(26, 13);
             this.lblPort.TabIndex = 3;
@@ -92,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(110, 116);
+            this.label2.Location = new System.Drawing.Point(110, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 13);
             this.label2.TabIndex = 4;
@@ -101,7 +80,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(154, 141);
+            this.label3.Location = new System.Drawing.Point(154, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 5;
@@ -110,7 +89,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(147, 166);
+            this.label4.Location = new System.Drawing.Point(147, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 13);
             this.label4.TabIndex = 6;
@@ -118,7 +97,7 @@
             // 
             // txtIpAddress
             // 
-            this.txtIpAddress.Location = new System.Drawing.Point(254, 62);
+            this.txtIpAddress.Location = new System.Drawing.Point(254, 24);
             this.txtIpAddress.Name = "txtIpAddress";
             this.txtIpAddress.Size = new System.Drawing.Size(281, 20);
             this.txtIpAddress.TabIndex = 7;
@@ -126,7 +105,7 @@
             // 
             // txtPort
             // 
-            this.txtPort.Location = new System.Drawing.Point(254, 87);
+            this.txtPort.Location = new System.Drawing.Point(254, 49);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(281, 20);
             this.txtPort.TabIndex = 8;
@@ -134,7 +113,7 @@
             // 
             // txtQMName
             // 
-            this.txtQMName.Location = new System.Drawing.Point(254, 112);
+            this.txtQMName.Location = new System.Drawing.Point(254, 74);
             this.txtQMName.Name = "txtQMName";
             this.txtQMName.Size = new System.Drawing.Size(281, 20);
             this.txtQMName.TabIndex = 9;
@@ -142,7 +121,7 @@
             // 
             // txtQName
             // 
-            this.txtQName.Location = new System.Drawing.Point(254, 137);
+            this.txtQName.Location = new System.Drawing.Point(254, 99);
             this.txtQName.Name = "txtQName";
             this.txtQName.Size = new System.Drawing.Size(281, 20);
             this.txtQName.TabIndex = 10;
@@ -150,15 +129,15 @@
             // 
             // txtCName
             // 
-            this.txtCName.Location = new System.Drawing.Point(254, 162);
+            this.txtCName.Location = new System.Drawing.Point(254, 124);
             this.txtCName.Name = "txtCName";
             this.txtCName.Size = new System.Drawing.Size(281, 20);
             this.txtCName.TabIndex = 11;
-            this.txtCName.Text = "QM_TEST.SVRCONN/TCP/DESKTOP-8CH23R4(1421)";
+            this.txtCName.Text = "QM_TEST.SVRCONN";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(110, 253);
+            this.button1.Location = new System.Drawing.Point(254, 210);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 23);
             this.button1.TabIndex = 12;
@@ -168,16 +147,16 @@
             // 
             // txtUserID
             // 
-            this.txtUserID.Location = new System.Drawing.Point(254, 187);
+            this.txtUserID.Location = new System.Drawing.Point(254, 149);
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.Size = new System.Drawing.Size(281, 20);
             this.txtUserID.TabIndex = 14;
-            this.txtUserID.Text = "testMq";
+            this.txtUserID.Text = "SLTESTUSER";
             // 
             // lblUserId
             // 
             this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(181, 191);
+            this.lblUserId.Location = new System.Drawing.Point(181, 153);
             this.lblUserId.Name = "lblUserId";
             this.lblUserId.Size = new System.Drawing.Size(41, 13);
             this.lblUserId.TabIndex = 13;
@@ -185,7 +164,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(254, 213);
+            this.txtPassword.Location = new System.Drawing.Point(254, 175);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(281, 20);
@@ -195,31 +174,15 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(169, 217);
+            this.label5.Location = new System.Drawing.Point(169, 179);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "Password";
             // 
-            // txtConnectionStatus
-            // 
-            this.txtConnectionStatus.Location = new System.Drawing.Point(379, 284);
-            this.txtConnectionStatus.Name = "txtConnectionStatus";
-            this.txtConnectionStatus.Size = new System.Drawing.Size(156, 20);
-            this.txtConnectionStatus.TabIndex = 17;
-            // 
-            // lblMessage
-            // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(251, 339);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(50, 13);
-            this.lblMessage.TabIndex = 18;
-            this.lblMessage.Text = "Message";
-            // 
             // btnGetMessage
             // 
-            this.btnGetMessage.Location = new System.Drawing.Point(110, 334);
+            this.btnGetMessage.Location = new System.Drawing.Point(110, 395);
             this.btnGetMessage.Name = "btnGetMessage";
             this.btnGetMessage.Size = new System.Drawing.Size(112, 23);
             this.btnGetMessage.TabIndex = 19;
@@ -229,7 +192,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(110, 415);
+            this.button2.Location = new System.Drawing.Point(110, 249);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 23);
             this.button2.TabIndex = 21;
@@ -239,21 +202,43 @@
             // 
             // txtPutMessage
             // 
-            this.txtPutMessage.Location = new System.Drawing.Point(254, 415);
+            this.txtPutMessage.Location = new System.Drawing.Point(254, 249);
+            this.txtPutMessage.Multiline = true;
             this.txtPutMessage.Name = "txtPutMessage";
-            this.txtPutMessage.Size = new System.Drawing.Size(156, 20);
+            this.txtPutMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtPutMessage.Size = new System.Drawing.Size(633, 130);
             this.txtPutMessage.TabIndex = 22;
+            // 
+            // lblConnectStstus
+            // 
+            this.lblConnectStstus.AutoSize = true;
+            this.lblConnectStstus.ForeColor = System.Drawing.Color.Red;
+            this.lblConnectStstus.Location = new System.Drawing.Point(384, 215);
+            this.lblConnectStstus.Name = "lblConnectStstus";
+            this.lblConnectStstus.Size = new System.Drawing.Size(78, 13);
+            this.lblConnectStstus.TabIndex = 23;
+            this.lblConnectStstus.Text = "Not connected";
+            // 
+            // txtGetMessage
+            // 
+            this.txtGetMessage.Location = new System.Drawing.Point(254, 395);
+            this.txtGetMessage.Multiline = true;
+            this.txtGetMessage.Name = "txtGetMessage";
+            this.txtGetMessage.ReadOnly = true;
+            this.txtGetMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtGetMessage.Size = new System.Drawing.Size(633, 130);
+            this.txtGetMessage.TabIndex = 24;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 450);
+            this.ClientSize = new System.Drawing.Size(1131, 544);
+            this.Controls.Add(this.txtGetMessage);
+            this.Controls.Add(this.lblConnectStstus);
             this.Controls.Add(this.txtPutMessage);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnGetMessage);
-            this.Controls.Add(this.lblMessage);
-            this.Controls.Add(this.txtConnectionStatus);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtUserID);
@@ -269,8 +254,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblPort);
             this.Controls.Add(this.lblIpAddress);
-            this.Controls.Add(this.lblConnectionStatus);
-            this.Controls.Add(this.label1);
             this.Name = "Home";
             this.Text = "Home";
             this.ResumeLayout(false);
@@ -279,9 +262,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblConnectionStatus;
         private System.Windows.Forms.Label lblIpAddress;
         private System.Windows.Forms.Label lblPort;
         private System.Windows.Forms.Label label2;
@@ -297,11 +277,11 @@
         private System.Windows.Forms.Label lblUserId;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtConnectionStatus;
-        private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.Button btnGetMessage;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtPutMessage;
+        private System.Windows.Forms.Label lblConnectStstus;
+        private System.Windows.Forms.TextBox txtGetMessage;
     }
 }
 
