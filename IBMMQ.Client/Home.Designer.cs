@@ -38,13 +38,13 @@
             this.txtQMName = new System.Windows.Forms.TextBox();
             this.txtQName = new System.Windows.Forms.TextBox();
             this.txtCName = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.lblUserId = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnGetMessage = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnPutMessage = new System.Windows.Forms.Button();
             this.txtPutMessage = new System.Windows.Forms.TextBox();
             this.lblConnectStstus = new System.Windows.Forms.Label();
             this.txtGetMessage = new System.Windows.Forms.TextBox();
@@ -135,15 +135,15 @@
             this.txtCName.TabIndex = 11;
             this.txtCName.Text = "QM_TEST.SVRCONN";
             // 
-            // button1
+            // btnConnect
             // 
-            this.button1.Location = new System.Drawing.Point(254, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Connect";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Connect);
+            this.btnConnect.Location = new System.Drawing.Point(254, 210);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(112, 23);
+            this.btnConnect.TabIndex = 12;
+            this.btnConnect.Text = "Connect";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.Connect);
             // 
             // txtUserID
             // 
@@ -182,29 +182,32 @@
             // 
             // btnGetMessage
             // 
+            this.btnGetMessage.Enabled = false;
             this.btnGetMessage.Location = new System.Drawing.Point(110, 395);
             this.btnGetMessage.Name = "btnGetMessage";
             this.btnGetMessage.Size = new System.Drawing.Size(112, 23);
             this.btnGetMessage.TabIndex = 19;
             this.btnGetMessage.Text = "Get message";
             this.btnGetMessage.UseVisualStyleBackColor = true;
-            this.btnGetMessage.Click += new System.EventHandler(this.btnGetMessage_Click);
+            this.btnGetMessage.Click += new System.EventHandler(this.GetMessage);
             // 
-            // button2
+            // btnPutMessage
             // 
-            this.button2.Location = new System.Drawing.Point(110, 249);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 23);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Put message";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnPutMessage.Enabled = false;
+            this.btnPutMessage.Location = new System.Drawing.Point(110, 249);
+            this.btnPutMessage.Name = "btnPutMessage";
+            this.btnPutMessage.Size = new System.Drawing.Size(112, 23);
+            this.btnPutMessage.TabIndex = 21;
+            this.btnPutMessage.Text = "Put message";
+            this.btnPutMessage.UseVisualStyleBackColor = true;
+            this.btnPutMessage.Click += new System.EventHandler(this.PutMessage);
             // 
             // txtPutMessage
             // 
             this.txtPutMessage.Location = new System.Drawing.Point(254, 249);
             this.txtPutMessage.Multiline = true;
             this.txtPutMessage.Name = "txtPutMessage";
+            this.txtPutMessage.ReadOnly = true;
             this.txtPutMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtPutMessage.Size = new System.Drawing.Size(633, 130);
             this.txtPutMessage.TabIndex = 22;
@@ -237,13 +240,13 @@
             this.Controls.Add(this.txtGetMessage);
             this.Controls.Add(this.lblConnectStstus);
             this.Controls.Add(this.txtPutMessage);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnPutMessage);
             this.Controls.Add(this.btnGetMessage);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtUserID);
             this.Controls.Add(this.lblUserId);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.txtCName);
             this.Controls.Add(this.txtQName);
             this.Controls.Add(this.txtQMName);
@@ -255,7 +258,7 @@
             this.Controls.Add(this.lblPort);
             this.Controls.Add(this.lblIpAddress);
             this.Name = "Home";
-            this.Text = "Home";
+            this.Text = "IMB MQ Manager";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,13 +275,13 @@
         private System.Windows.Forms.TextBox txtQMName;
         private System.Windows.Forms.TextBox txtQName;
         private System.Windows.Forms.TextBox txtCName;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.TextBox txtUserID;
         private System.Windows.Forms.Label lblUserId;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnGetMessage;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnPutMessage;
         private System.Windows.Forms.TextBox txtPutMessage;
         private System.Windows.Forms.Label lblConnectStstus;
         private System.Windows.Forms.TextBox txtGetMessage;

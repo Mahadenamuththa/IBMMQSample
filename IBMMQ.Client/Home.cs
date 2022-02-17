@@ -14,6 +14,7 @@ namespace IBMMQ.Client
 {
     public partial class Home : Form
     {
+        private bool isConnected = false;
         public Home()
         {
             InitializeComponent();
@@ -23,30 +24,47 @@ namespace IBMMQ.Client
         {
             try
             {
-                // Create IBMQueueManager
-                IBMQueueManager iBMQueueManager = new IBMQueueManager();
+                string response = string.Empty;
+                if (!isConnected)
+                {
+                    // Create IBMQueueManager
+                    IBMQueueManager iBMQueueManager = new IBMQueueManager();
 
-                //Create Hashtable for pass properties
-                Hashtable props = new Hashtable();
-                // Host name(IP Address)
-                props.Add(MQC.HOST_NAME_PROPERTY, txtIpAddress.Text);
-                // Port
-                props.Add(MQC.PORT_PROPERTY, txtPort.Text);
-                // Channel name
-                props.Add(MQC.CHANNEL_PROPERTY, txtCName.Text);
-                // User name
-                props.Add(MQC.USER_ID_PROPERTY, txtUserID.Text);
-                // Password
-                props.Add(MQC.PASSWORD_PROPERTY, txtPassword.Text);
+                    //Create Hashtable for pass properties
+                    Hashtable props = new Hashtable();
+                    // Host name(IP Address)
+                    props.Add(MQC.HOST_NAME_PROPERTY, txtIpAddress.Text);
+                    // Port
+                    props.Add(MQC.PORT_PROPERTY, txtPort.Text);
+                    // Channel name
+                    props.Add(MQC.CHANNEL_PROPERTY, txtCName.Text);
+                    // User name
+                    props.Add(MQC.USER_ID_PROPERTY, txtUserID.Text);
+                    // Password
+                    props.Add(MQC.PASSWORD_PROPERTY, txtPassword.Text);
 
-                // Start connection
-                string response = IBMQueueManager.ConnectMQ(txtQMName.Text, txtQName.Text, props);
+                    // Start connection
 
-                //Set connetion status
-                lblConnectStstus.ForeColor = Color.Green;
-                lblConnectStstus.Text = "Connected";
+                    response = IBMQueueManager.ConnectMQ(txtQMName.Text, txtQName.Text, props);
 
-                MessageBox.Show(response, "IBM MQ manager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //Set connetion status
+                    lblConnectStstus.ForeColor = Color.Green;
+                    lblConnectStstus.Text = "Connected";
+                    isConnected = true;
+                    EnableDisableField(true);
+                }
+                else
+                {
+                    //Set connetion status
+                    lblConnectStstus.ForeColor = Color.Red;
+                    lblConnectStstus.Text = "Not connected";
+                    IBMQueueManager.queueManager.Disconnect();
+                    isConnected = false;
+                    EnableDisableField(false);
+                    response = "Disconnected successfully";
+                }
+
+                //MessageBox.Show(response, "IBM MQ manager", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MQException exp)
             {
@@ -85,7 +103,7 @@ namespace IBMMQ.Client
             }
         }
 
-        private void btnGetMessage_Click(object sender, EventArgs e)
+        private void GetMessage(object sender, EventArgs e)
         {
             try
             {
@@ -121,7 +139,7 @@ namespace IBMMQ.Client
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void PutMessage(object sender, EventArgs e)
         {
             try
             {
@@ -149,6 +167,28 @@ namespace IBMMQ.Client
                 MessageBox.Show("Error sending message", "IBM MQ manger", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
+        }
+
+        private void EnableDisableField(bool disabled)
+        {
+            if (disabled)
+            {
+                btnConnect.Text = "Disconnect";
+            }
+            else
+            {
+                btnConnect.Text = "Connect";
+            }
+            txtCName.ReadOnly = disabled;
+            txtIpAddress.ReadOnly = disabled;
+            txtPassword.ReadOnly = disabled;
+            txtPort.ReadOnly = disabled;
+            txtQMName.ReadOnly = disabled;
+            txtQName.ReadOnly = disabled;
+            txtUserID.ReadOnly = disabled;
+            txtPutMessage.ReadOnly = !disabled;
+            btnGetMessage.Enabled = disabled;
+            btnPutMessage.Enabled = disabled;
         }
     }
 }
