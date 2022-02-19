@@ -24,13 +24,13 @@ MQ allows independent and potentially non-concurrent applications on a distribut
 
 02. IBM Websphere MQ Installation on Windows
 
-2.1 Run setup
+02.1 Run setup
 
-2.1.1
+02.1.1
 
 ![image](https://user-images.githubusercontent.com/21302583/154776426-7e1aa60b-fcd8-46b4-b3fc-c178c5e68dd0.png)
 
-2.1.2
+02.1.2
 
 ![image](https://user-images.githubusercontent.com/21302583/154776453-b9fa0de3-78a4-4d7c-a05b-1dce99405638.png)
 
