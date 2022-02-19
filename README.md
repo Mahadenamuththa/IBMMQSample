@@ -50,6 +50,8 @@ MQ allows independent and potentially non-concurrent applications on a distribut
 
 ![image](https://user-images.githubusercontent.com/21302583/154776555-b3b0ca58-81c1-4324-a421-7b1228748e04.png)
 
+2.1.7
+
 Video to Refer
 [![How to install, configure IBM Websphere MQ on Windows](https://img.youtube.com/vi/JtQugdDFkMc/0.jpg)](https://www.youtube.com/watch?v=JtQugdDFkMc "![How to install, configure IBM Websphere MQ on Windows]")
 
