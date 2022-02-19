@@ -17,9 +17,7 @@ namespace IBMMQ.Client
 
         private static MQPutMessageOptions queuePutMessageOptions;
 
-        private static MQGetMessageOptions queueGetMessageOptions;
-
-
+        private static MQGetMessageOptions queueGetMessageOptions;    
 
         private static string _queueName = string.Empty;
 
@@ -35,8 +33,6 @@ namespace IBMMQ.Client
 
         private static string message;
         #endregion
-
-
         #region Public methods
         public static string ConnectMQ(string queueManagerName, string queueName, Hashtable props)
         {

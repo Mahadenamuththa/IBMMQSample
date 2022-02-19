@@ -44,7 +44,6 @@ namespace IBMMQ.Client
                     props.Add(MQC.PASSWORD_PROPERTY, txtPassword.Text);
 
                     // Start connection
-
                     response = IBMQueueManager.ConnectMQ(txtQMName.Text, txtQName.Text, props);
 
                     //Set connetion status
