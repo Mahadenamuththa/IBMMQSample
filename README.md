@@ -26,31 +26,31 @@ MQ allows independent and potentially non-concurrent applications on a distribut
 
 3. Run setup
 
-  1.
+4. Select IBM MQ Installation
 
-  ![image](https://user-images.githubusercontent.com/21302583/154776426-7e1aa60b-fcd8-46b4-b3fc-c178c5e68dd0.png)
+![image](https://user-images.githubusercontent.com/21302583/154776426-7e1aa60b-fcd8-46b4-b3fc-c178c5e68dd0.png)
 
-  3.
+5.
 
-  ![image](https://user-images.githubusercontent.com/21302583/154776453-b9fa0de3-78a4-4d7c-a05b-1dce99405638.png)
+![image](https://user-images.githubusercontent.com/21302583/154776453-b9fa0de3-78a4-4d7c-a05b-1dce99405638.png)
 
-  4.
+4.
 
-  ![image](https://user-images.githubusercontent.com/21302583/154776480-1a66fe73-a994-4c75-8839-222f9f6804d3.png)
+![image](https://user-images.githubusercontent.com/21302583/154776480-1a66fe73-a994-4c75-8839-222f9f6804d3.png)
 
-2.1.4.
+5.
 
 ![image](https://user-images.githubusercontent.com/21302583/154776522-63dfef76-70de-45b9-ac01-d09669c8586d.png)
 
-2.1.5.
+6.
 
 ![image](https://user-images.githubusercontent.com/21302583/154776541-9d6d8c22-002f-482b-9b14-88bd56b73e6d.png)
 
-2.1.6.
+7.
 
 ![image](https://user-images.githubusercontent.com/21302583/154776555-b3b0ca58-81c1-4324-a421-7b1228748e04.png)
 
-2.1.7.
+8.
 
 Video to Refer
 
