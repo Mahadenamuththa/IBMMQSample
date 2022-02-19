@@ -24,9 +24,9 @@ MQ allows independent and potentially non-concurrent applications on a distribut
 
 2. IBM Websphere MQ Installation on Windows
 
-  1. Run setup
+3. Run setup
 
-  2.
+  1.
 
   ![image](https://user-images.githubusercontent.com/21302583/154776426-7e1aa60b-fcd8-46b4-b3fc-c178c5e68dd0.png)
 
