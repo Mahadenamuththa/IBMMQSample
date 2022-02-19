@@ -34,23 +34,23 @@ MQ allows independent and potentially non-concurrent applications on a distribut
 
 ![image](https://user-images.githubusercontent.com/21302583/154776453-b9fa0de3-78a4-4d7c-a05b-1dce99405638.png)
 
-4.
+6.
 
 ![image](https://user-images.githubusercontent.com/21302583/154776480-1a66fe73-a994-4c75-8839-222f9f6804d3.png)
 
-5.
+7.
 
 ![image](https://user-images.githubusercontent.com/21302583/154776522-63dfef76-70de-45b9-ac01-d09669c8586d.png)
 
-6.
+8.
 
 ![image](https://user-images.githubusercontent.com/21302583/154776541-9d6d8c22-002f-482b-9b14-88bd56b73e6d.png)
 
-7.
+9.
 
 ![image](https://user-images.githubusercontent.com/21302583/154776555-b3b0ca58-81c1-4324-a421-7b1228748e04.png)
 
-8.
+10.
 
 Video to Refer
 
